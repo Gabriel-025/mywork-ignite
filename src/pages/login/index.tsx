@@ -79,7 +79,13 @@ const navigate = useNavigate()
               type="submit"
               className="disabled:cursor-not-allowed disabled:opacity-50 mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700"
             >
-              Garanrtir minha vaga
+              {loading  ? (
+                <div className="flex-1 flex items-center justify-center ">
+                  <div className="border-[4px] border-gray-300 border-l-zinc-500    rounded-[50%] w-[20px] h-[20px] animate-spin "></div>
+                </div>
+              ) : (
+                "Garanrtir minha vaga"
+              )}
             </button>
           </form>
         </div>
