@@ -35,7 +35,8 @@ export function Lesson(props: LessonProps) {
         <header className="flex items-center justify-between">
           {isLessonAvaibleAt ? (
             <span
-              className={`text-sm  font-medium flex gap-2 items-center ${
+              className={`text-sm  font-medium flex gap-2 items-center 
+              ${
                 isActiveLesson ? "text-white" : "text-blue-500"
               } `}
             >
@@ -50,7 +51,8 @@ export function Lesson(props: LessonProps) {
           )}
           {props.lessonType === "live" ? (
             <span
-              className={`text-xs rounded px-2 py-[0.125rem]  border font-bold ${
+              className={`text-xs rounded px-2 py-[0.125rem]  border font-bold 
+              ${
                 isActiveLesson
                   ? "text-white border-white"
                   : "text-green-300 border-green-300"
