@@ -2,41 +2,28 @@ import { DefaultUi, Player, Youtube } from "@vime/react";
 import { CaretRight, FileArrowDown, Image } from "phosphor-react";
 import { Btn } from "./Button";
 import { Footer } from "./Footer";
-
-import "@vime/core/themes/default.css"
-import { useQuery } from "@apollo/client";
-import { GET_LESSON_BY_SLUG_QUERY } from "../queries/lesson";
 import { Spin } from "../Spinning";
 
+import { useGetLessonBySlugQuery } from "../graphql/generated";
+import "@vime/core/themes/default.css";
+import { Teacher } from "./TeacherLesson";
 
-interface GetLessonBySlug {
-  lesson: {
-    title: string;
-    videoId: string;
-    description: string;
-    teacher: {
-      bio: string;
-      avatarURL: string;
-      name: string;
-    };
-  };
-}
+
 
 interface VideoProps {
   lessonSlug: string;
 }
 export function Video(props: VideoProps) {
-  const { data } = useQuery<GetLessonBySlug>(GET_LESSON_BY_SLUG_QUERY, {
+  const { data } = useGetLessonBySlugQuery ({
     variables: {
       slug: props.lessonSlug,
     },
   });
 
-  if (!data) {
-    return (
-      <Spin/>
-    );
-}
+  if (!data || !data.lesson) {
+    // || !data.lesson tratando  nulo ou indefino 
+    return <Spin />;
+  }
 
 
   return (
@@ -44,7 +31,11 @@ export function Video(props: VideoProps) {
       <div className="bg-black flex justify-center p-0">
         <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
           <Player>
-            <Youtube  lang="br"  videoId={data.lesson.videoId} key={data.lesson.videoId}/>
+            <Youtube
+              lang="br"
+              videoId={data.lesson.videoId}
+              key={data.lesson.videoId}
+            />
             <DefaultUi />
           </Player>
         </div>
@@ -57,20 +48,16 @@ export function Video(props: VideoProps) {
             <p className=" text-gray-200  mt-4 leading-relaxed">
               {data.lesson.description}
             </p>
-            <div className="flex items-center gap-4 py-3  mt-6 ">
-              <img
-                src={data.lesson.teacher.avatarURL}
-                className="rounded-full w-[63.38px] h-[63.38px] border-[2px] border-blue-500"
-              />
-              <div className="flex flex-col leading-relaxed">
-                <strong className="text-2xl block font-bold  ">
-                  {data.lesson.teacher.name}
-                </strong>
-                <span className="text-sm  text-gray-200 block">
-                  {data.lesson.teacher.bio}
-                </span>
-              </div>
-            </div>
+            {//tratando dados opcionais
+              data.lesson.teacher && (
+                <Teacher
+                  name={data.lesson.teacher.name}
+                  bio={data.lesson.teacher.bio}
+                  avatarURL={data.lesson.teacher.avatarURL}
+                />
+                
+              )
+            }
           </div>
           <div className="flex flex-col gap-4">
             <Btn buttonType="color" />
