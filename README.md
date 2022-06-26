@@ -1,4 +1,4 @@
-# mywork-ignite# Ignite-Lab | Me
+# Ignite-Lab | Me
 
 Projeto criado durante minha participação no Ignite-lab, especialização REACT da Rocket Seat, uma semana de conhecimentos muito bem inseridos pela equipe,
 
