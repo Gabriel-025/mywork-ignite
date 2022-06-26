@@ -1,18 +1,23 @@
-import { SlackLogo } from "phosphor-react"
 
-export function Teacher() {
+interface TeacherProps {
+  name: string;
+  bio: string;
+  avatarURL: string;
+}
+
+export function Teacher(props: TeacherProps) {
     return (
       <div className="flex items-center gap-4 py-3  mt-6 ">
         <img
-          src="https://avatars.githubusercontent.com/u/78861515?v=4"
+          src={props.avatarURL}
           className="rounded-full w-[63.38px] h-[63.38px] border-[2px] border-blue-500"
         />
         <div className="flex flex-col leading-relaxed">
           <strong className="text-2xl block font-bold  ">
-            Gabriel Machado
+            {props.name}
           </strong>
           <span className="text-sm  text-gray-200 block">
-            Desenvolvedor JR. no SPRINTA
+            {props.bio}
           </span>
         </div>
       </div>
