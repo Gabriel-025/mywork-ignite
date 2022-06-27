@@ -5,7 +5,6 @@ import { Logo } from "../../components/Svgs/Logo";
 import { Stage, useCheckUsersQuery, useCreateSubcriberMutation, UserKind } from "../../graphql/generated";
 
 
- 
   
 export function Login() {
 const navigate = useNavigate()
