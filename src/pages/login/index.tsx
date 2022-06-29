@@ -2,14 +2,12 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import Group from "../../assets/Group.png";
 import { Logo } from "../../components/Svgs/Logo";
-import { useCreateSubcriberMutation } from "../../graphql/generated";
+import { Stage, useCheckUsersQuery, useCreateSubcriberMutation, UserKind } from "../../graphql/generated";
 
 
- 
   
 export function Login() {
 const navigate = useNavigate()
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -25,8 +23,10 @@ const navigate = useNavigate()
       }
    })
     navigate('/event')
-  }
-  return (
+  }  
+    
+   
+  return ( 
     <div className="min-h-screen bg-cover bg-login bg-no-repeat flex  flex-col items-center">
       <div className="max-w-[1100px] w-full flex justify-between  items-center mt-20 mx-auto">
         <div className="max-w-[640px]">

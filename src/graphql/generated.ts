@@ -5588,6 +5588,11 @@ export type GetLessonsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typename?: 'Lesson', id: string, lessonType: LessonType, availableAt?: any | null, title: string, slug: string }> };
 
+export type CheckUsersQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CheckUsersQuery = { __typename?: 'Query', subscribers: Array<{ __typename?: 'Subscriber', name: string, email: string }> };
+
 
 export const CreateSubcriberDocument = gql`
     mutation createSubcriber($name: String!, $email: String!) {
@@ -5703,3 +5708,38 @@ export function useGetLessonsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type GetLessonsQueryHookResult = ReturnType<typeof useGetLessonsQuery>;
 export type GetLessonsLazyQueryHookResult = ReturnType<typeof useGetLessonsLazyQuery>;
 export type GetLessonsQueryResult = Apollo.QueryResult<GetLessonsQuery, GetLessonsQueryVariables>;
+export const CheckUsersDocument = gql`
+    query CheckUsers {
+  subscribers {
+    name
+    email
+  }
+}
+    `;
+
+/**
+ * __useCheckUsersQuery__
+ *
+ * To run a query within a React component, call `useCheckUsersQuery` and pass it any options that fit your needs.
+ * When your component renders, `useCheckUsersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCheckUsersQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useCheckUsersQuery(baseOptions?: Apollo.QueryHookOptions<CheckUsersQuery, CheckUsersQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<CheckUsersQuery, CheckUsersQueryVariables>(CheckUsersDocument, options);
+      }
+export function useCheckUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CheckUsersQuery, CheckUsersQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<CheckUsersQuery, CheckUsersQueryVariables>(CheckUsersDocument, options);
+        }
+export type CheckUsersQueryHookResult = ReturnType<typeof useCheckUsersQuery>;
+export type CheckUsersLazyQueryHookResult = ReturnType<typeof useCheckUsersLazyQuery>;
+export type CheckUsersQueryResult = Apollo.QueryResult<CheckUsersQuery, CheckUsersQueryVariables>;
