@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Event } from "../pages/Event";
+import { Event } from "../pages/Subscrible";
 import { Login } from "../pages/login";
 
 export function Router() {
