@@ -33,7 +33,7 @@ const navigate = useNavigate()
           <Logo />
           <h1 className="mt-8 text-[2.5rem] leading-tight">
             Construa uma
-            <strong className="text-blue-500">aplicação completa</strong>, do
+            <strong className="text-blue-500"> aplicação completa</strong>, do
             zero, com
             <strong className="text-blue-500"> React</strong>
           </h1>
@@ -73,7 +73,7 @@ const navigate = useNavigate()
                   <div className="border-[4px] border-gray-300 border-l-zinc-500    rounded-[50%] w-[20px] h-[20px] animate-spin "></div>
                 </div>
               ) : (
-                "Garanrtir minha vaga"
+                "Garantir minha vaga"
               )}
             </button>
           </form>
