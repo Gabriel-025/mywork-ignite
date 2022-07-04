@@ -8,7 +8,7 @@ module.exports = {
         Group: "url('../assets/Group.png')",
       },
       fontFamily: {
-        sans:'Roboto, sans-serif'
+        sans: "Roboto, sans-serif",
       },
       colors: {
         green: {
@@ -26,7 +26,7 @@ module.exports = {
           500: "#F75A68",
         },
         gray: {
-          001:"#0000001a",
+          001: "#0000001a",
           000: "#f4f4f4",
           100: "#E1E1E6",
           200: "#C4C4CC",
@@ -36,6 +36,9 @@ module.exports = {
           700: "#121214",
           900: "#09090A",
         },
+      },
+      screens: {
+        xsm: "360px",
       },
     },
   },
