@@ -35,7 +35,7 @@ export function Lesson(props: LessonProps) {
         <header className="flex items-center justify-between">
           {isLessonAvaibleAt ? (
             <span
-              className={`text-sm  font-medium flex gap-2 items-center 
+              className={`text-sm  font-medium flex gap-2 items-center justify-center
               ${
                 isActiveLesson ? "text-white" : "text-blue-500"
               } `}
@@ -44,14 +44,14 @@ export function Lesson(props: LessonProps) {
               Conteúdo liberado
             </span>
           ) : (
-            <span className="text-sm text-orange-500 font-medium flex gap-2 items-center">
+            <span className="text-[12px] text-orange-500 font-medium flex gap-2 items-center">
               <Lock size={20} />
               Em breve
             </span>
           )}
           {props.lessonType === "live" ? (
             <span
-              className={`text-xs rounded px-2 py-[0.125rem]  border font-bold 
+              className={`text-[12px] rounded px-2 py-[0.125rem]  border font-bold 
               ${
                 isActiveLesson
                   ? "text-white border-white"

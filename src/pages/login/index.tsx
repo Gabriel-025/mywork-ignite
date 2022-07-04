@@ -24,19 +24,19 @@ export function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-cover bg-login bg-no-repeat flex  flex-col items-center">
-      <div className="max-w-[1100px] w-full flex flex-col justify-between  items-center mt-20 mx-auto md:flex-row  md:items-center">
-        <div className="max-w-[660px] text-start md:text-start md:px-1">
+    <div className="min-h-screen bg-cover bg-login bg-no-repeat flex  flex-col items-center px-5">
+      <div className="max-w-[1100px] w-full flex flex-col justify-between  items-center mt-12 mx-auto md:flex-row  md:items-center">
+        <div className="max-w-[660px] text-start md:text-start px-8  ">
           <div className="flex flex-col items-center w-full md:items-start ">
             <Logo />
           </div>
-          <h1 className="mt-8 text-[2.5rem] text-center leading-tight px-5 md:px-0 md:text-start">
+          <h1 className="mt-5 text-[2.35rem] text-start leading-tight md:text-start  md:text-[2.5rem]">
             Construa uma
             <strong className="text-blue-500"> aplicação completa</strong>, do
             zero, com
             <strong className="text-blue-500"> React</strong>
           </h1>
-          <p className="mt-4 text-gray-200 leading-relaxed  text-center px-8 md:px-0 md:text-start">
+          <p className="mt-2 text-gray-200 leading-relaxed  text-start  md:text-start">
             Em apenas uma semana você vai dominar na prática uma das tecnologias
             mais utilizadas e com alta demanda para acessar as melhores
             oportunidades do mercado.
@@ -70,7 +70,7 @@ export function Login() {
             >
               {loading ? (
                 <div className="flex-1 flex items-center justify-center ">
-                  <div className="border-[4px] border-zinc-500 border-l-green-600   rounded-[50%] w-[25px] h-[25px] animate-spin "></div>
+                  <div className="border-[4px] border-zinc-500 border-l-green-600 border-t-green-600 rounded-[50%] w-[25px] h-[25px] animate-spin "></div>
                 </div>
               ) : (
                 "Garantir minha vaga"
@@ -79,7 +79,10 @@ export function Login() {
           </form>
         </div>
       </div>
-      <img src={Group} className="mt-2 px-5 md:px-0" />
+      <img
+        src={Group}
+        className="my-2 px-5 opacity-[0.55] md:px-0 md:opacity-[1]"
+      />
     </div>
   );
 }
