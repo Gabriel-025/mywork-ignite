@@ -25,7 +25,10 @@ export function Lesson(props: LessonProps) {
   const isActiveLesson = slug === props.slug;
    
   return (
-    <Link to={`/event/lesson/${props.slug}`} className="group">
+    <Link
+      to={`/event/lesson/${props.slug}`}
+      className="group"
+    >
       <span className="text-gray-300">{avaibleDateFormatted}</span>
       <div
         className={`rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 ${
@@ -36,9 +39,7 @@ export function Lesson(props: LessonProps) {
           {isLessonAvaibleAt ? (
             <span
               className={`text-sm  font-medium flex gap-2 items-center justify-center
-              ${
-                isActiveLesson ? "text-white" : "text-blue-500"
-              } `}
+              ${isActiveLesson ? "text-white" : "text-blue-500"} `}
             >
               <CheckCircle size={20} />
               Conteúdo liberado
@@ -61,11 +62,14 @@ export function Lesson(props: LessonProps) {
               AO VIVO
             </span>
           ) : (
-              <span className={`text-xs rounded px-2 py-[0.125rem]  border font-bold 
-            ${ isActiveLesson
-                  ? "text-white border-white"
-                  : "text-green-300 border-green-300"
-              } `}>
+            <span
+              className={`text-xs rounded px-2 py-[0.125rem]  border font-bold 
+            ${
+              isActiveLesson
+                ? "text-white border-white"
+                : "text-green-300 border-green-300"
+            } `}
+            >
               AULA PRÁTICA
             </span>
           )}
