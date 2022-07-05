@@ -4,11 +4,8 @@ import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Video } from "../../components/Video";
 
-interface PropsSlug {
-  slug: string;
-}
 
-export function Event(props: PropsSlug) {
+export function Event() {
   const { slug } = useParams<{ slug: string }>();
 
   const [sidebarOpened, setSidebarOpened] = useState(false);
