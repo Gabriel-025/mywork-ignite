@@ -36,8 +36,8 @@ export function Video(props: VideoProps) {
           </Player>
         </div>
       </div>
-      <div className="flex p-6 max-w-[1100px] mx-auto">
-        <div className="flex items-start gap-16 flex-col lg:flex-row">
+      <div className="flex px-5 max-w-[1100px] mx-auto">
+        <div className="flex items-start gap-12 flex-col lg:flex-row">
           <div className="flex-1  ">
             <h1 className="text-2xl font-bold ">{data.lesson.title}</h1>
             <p className=" text-gray-200  mt-4 leading-relaxed">
@@ -60,13 +60,13 @@ export function Video(props: VideoProps) {
           </div>
         </div>
       </div>
-      <div className="flex  p-6 lg:justify-center">
+      <div className="flex  p-5 lg:justify-center">
         <div className="gap-8 mt-8 grid grid-rows-2 max-w-[1100px] lg:grid-cols-2 w-full lg:p-6   ">
           <BtnComplement buttonType="complement" />
           <BtnComplement buttonType="wallpaper" />
         </div>
       </div>
-      <div className="p-6">
+      <div className="p-5">
         <Footer />
       </div>
     </div>
