@@ -36,7 +36,7 @@ export function Video(props: VideoProps) {
           </Player>
         </div>
       </div>
-      <div className="flex px-5 max-w-[1100px] mx-auto">
+      <div className="flex px-5 pt-6 max-w-[1100px] mx-auto">
         <div className="flex items-start gap-12 flex-col lg:flex-row">
           <div className="flex-1  ">
             <h1 className="text-2xl font-bold ">{data.lesson.title}</h1>
