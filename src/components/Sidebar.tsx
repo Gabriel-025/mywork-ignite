@@ -5,7 +5,8 @@ import { useState } from "react";
 export function Sidebar() {
   const { data } = useGetLessonsQuery(); 
 
-    const [lessonOpened, setLessonOpened] = useState(false);
+  const [lessonOpened, setLessonOpened] = useState(false);
+  
     function OpenSidebar() {
       setLessonOpened(!lessonOpened);
     }

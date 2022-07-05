@@ -18,10 +18,7 @@ export function Event() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header onSidebarOpened={OpenSidebar} sidebarOpened={sidebarOpened} />
-      <main
-        className="flex flex-1"
-        onClick={() => setSidebarOpened(!sidebarOpened)}
-      >
+      <main className="flex flex-1">
         {slug ? (
           <Video lessonSlug={slug} />
         ) : (
@@ -31,7 +28,11 @@ export function Event() {
             </strong>
           </div>
         )}
-        {(window.innerWidth >= 1024 || sidebarOpened) && <Sidebar />}
+        {(window.innerWidth > 1024 || sidebarOpened) && (
+          <div onClick={() => setSidebarOpened(!sidebarOpened)}>
+            <Sidebar />
+          </div>
+        )}
       </main>
     </div>
   );
