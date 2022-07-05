@@ -24,7 +24,7 @@ export function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-cover bg-login bg-no-repeat flex  flex-col items-center px-8">
+    <div className="min-h-screen bg-cover bg-login bg-no-repeat flex  flex-col items-center px-5">
       <div className="max-w-[1100px] w-full flex flex-col justify-between  items-center mt-12 mx-auto md:flex-row  md:items-center">
         <div className="max-w-[660px] text-start md:text-start  pr-3 ">
           <div className="flex flex-col items-center w-full md:items-start ">
